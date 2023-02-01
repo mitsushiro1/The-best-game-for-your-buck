@@ -1,0 +1,39 @@
+body{
+    font-family: 'Noto Sans Adlam Unjoined', sans-serif;
+    background-color: #8D9EFF;
+}
+
+
+
+h1{
+    display: flex;
+    background-color: rgb(72, 72, 112);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    color: azure;
+    border: 20px;
+    width: auto;
+    height: 100px;
+}
+
+.containEverything{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#dropDowncontainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#resultsBoxes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
