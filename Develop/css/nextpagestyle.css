@@ -21,3 +21,32 @@ h1{
     color: azure;
 
 }
+
+#searchAgain {
+   
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   
+}
+#containerSecond{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+h2{
+    text-align: center;
+}
+#pastResults{
+    border-right: 10 px solid black;
+    justify-content: center;
+}
+#salesResultsPage{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    
+
+}
