@@ -1,9 +1,11 @@
-const searchBoxEl = document.querySelector(".form-control");
-const searchButtonEl = document.querySelector(".btn");
+const searchBoxEl = document.querySelector("#default-search");
+const searchButtonEl = document.querySelector("#searchBtn");
 let keyword = ("");
 
   //event listener to record searchBox input
 searchButtonEl.addEventListener("click", function (event) {
+  //prevent default
+  event.preventDefault();
   keyword = searchBoxEl.value;
   console.log(keyword);
   callApi();
