@@ -1,87 +1,80 @@
 const searchBoxEl = document.querySelector("#default-search");
 const searchButtonEl = document.querySelector("#searchBtn");
-let keyword = ("");
+let searchTerm = '';
 
   //event listener to record searchBox input
 searchButtonEl.addEventListener("click", function (event) {
   //prevent default
   event.preventDefault();
-  keyword = searchBoxEl.value;
-  console.log(keyword);
-  callApi();
+  searchTerm = searchBoxEl.value;
+  console.log(searchTerm);
+  callApi(searchTerm);
 })
 
 
 //call search bar api function
 function callApi (keyword) {
+  //reset function
+  reset();
+
+  
+  console.log(keyword);
   const apiKey = '72423c9bbb7e4173a94ff33fa6307579';
-fetch(`https://rawg.io/api/games?token&key=${apiKey}&search_exact=${keyword}&name=${keyword}`)
+
+  fetch(`https://rawg.io/api/games?search=${keyword}&search_exact=true${keyword}&token&key=${apiKey}`) 
+
   .then(res => res.json())
-  .then(data => console.log(data))
+  //assign data results to object array
+
+  .then (data => {
+   //loop through 10 results assigned to variables
+    for (let i = 0; i < 10; i++) {
+      const gameName = data.results[i].name;
+      console.log(gameName);
+      const gameImage = data.results[i].background_image;
+      console.log(gameImage);
+      const gameRating = data.results[i].rating;
+      console.log(gameRating);
+      //generate card elements in html resultsBoxes from gameName, gameImage, gameRating
+      const resultsBoxes = document.querySelector("#resultsBoxes");
+      const cardEl = document.createElement("div");
+      cardEl.classList.add("card");
+      cardEl.classList.add("col-3");
+      cardEl.classList.add("m-2");
+      cardEl.classList.add("p-2");
+      cardEl.classList.add("bg-dark");
+      cardEl.classList.add("text-white");
+      cardEl.classList.add("rounded");
+      cardEl.classList.add("border");
+      cardEl.classList.add("border-warning");
+      cardEl.classList.add("shadow");
+      cardEl.classList.add("text-center");
+      cardEl.innerHTML = 'Name: ' + gameName + 
+      ' Game Rating: ' + gameRating;
+      let cardElImg = document.createElement('img');
+      cardElImg.src = gameImage;
+      cardEl.appendChild(cardElImg);
+
+      // //could comment this block of code out for now as it might throw error due to undefined variables
+      // let linkEl = document.createElement('a');
+      // //set the class for linkEl here
+      // linkEl.classList = '';
+      // linkEl.setAttribute('href', '../nextpage.html?q=' + searchTerm + '=' + platform);
+      // linkEl.appendChild(carEl);
+      
+      //add image to card
+      resultsBoxes.appendChild(cardEl);  
+    }   
+  })
   .catch(error => console.error('Error:', error));
 }
-  /*function searchBarApi () {
-    const getIgdbGames = async url => {
-      const API_URL = `https://api.igdb.com/v4/keywords${keyword}`;
-      let response = await fetch(
-          API_URL, {
-          method: 'POST',
-          headers: {
-              'Accept': 'application/json',
-              'Client-ID': 'mj3wq23qcodxsya5u882j4ac433ebn',
-              'Authorization': 'Bearer krpzfaqd8euiddwbx22gmkbasgwywn',
-          },
-          
-         body: "fields name;"
-         //data: "fields id,artworks,bundles,category,checksum,collection,cover.*,created_at,first_release_date,follows,game_engines.*,game_modes.*,genres.*,hypes,keywords.*,multiplayer_modes,name,parent_game, platforms.*, platforms.platform_logo.*,player_perspectives.*,popularity,rating,rating_count,screenshots.*, slug,standalone_expansions,status,storyline,summary,tags,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos.*;sort popularity desc;"
-      });
-      response = response.json();
-      return response;
-  }; 
-} 
-})
 
-//call search bar Api function
-
-/*function searchBarApi () {
-axios({
-  url: "https://api.igdb.com/v4/keywords",
-  method: 'POST',
-  headers: {
-      'Accept': 'application/json',
-      'Client-ID': 'mj3wq23qcodxsya5u882j4ac433ebn',
-      'Authorization': 'Bearer krpzfaqd8euiddwbx22gmkbasgwywn',
-  },
-  data: "fields checksum,created_at,name,slug,updated_at,url;"
-})
-  .then(response => {
-      console.log(response.data);
-  })
-  .catch(err => {
-      console.error(err);
-  });
+//reset function
+function reset () {
+  const resultsBoxes = document.querySelector("#resultsBoxes");
+  resultsBoxes.innerHTML = '';
 }
+  
 
-//POST: https//api.igdb.com/v4/games
-//Client-ID: mj3wq23qcodxsya5u882j4ac433ebn
-//Authorization: Bearer krpzfaqd8euiddwbx22gmkbasgwywn
-//Body: *fields*
- Reference call, replace Client ID and access_token. Keep 'Bearer" capital
-axios({
-  url: "https://api.igdb.com/v4/franchises",
-  method: 'POST',
-  headers: {
-      'Accept': 'application/json',
-      'Client-ID: Client ID',
-      'Authorization: Bearer access_token',
-  },
-  data: "fields checksum,created_at,games,name,slug,updated_at,url;"
-})
-  .then(response => {
-      console.log(response.data);
-  })
-  .catch(err => {
-      console.error(err);
-  });
 // variable will be the selected game title
 //curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}'*/
