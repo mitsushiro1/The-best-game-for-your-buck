@@ -1,5 +1,7 @@
+//search bar elements
 const searchBoxEl = document.querySelector("#default-search");
 const searchButtonEl = document.querySelector("#searchBtn");
+
 let searchTerm = '';
 
   //event listener to record searchBox input
@@ -16,11 +18,8 @@ searchButtonEl.addEventListener("click", function (event) {
 function callApi (keyword) {
   //reset function
   reset();
-
-  
   console.log(keyword);
   const apiKey = '72423c9bbb7e4173a94ff33fa6307579';
-
   fetch(`https://rawg.io/api/games?search=${keyword}&search_exact=true${keyword}&token&key=${apiKey}`) 
 
   .then(res => res.json())
@@ -67,7 +66,7 @@ function reset () {
   const resultsBoxes = document.querySelector("#resultsBoxes");
   resultsBoxes.innerHTML = '';
 }
-  
+
 
 // variable will be the selected game title
 //curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}'*/
