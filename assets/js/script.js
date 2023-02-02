@@ -105,8 +105,8 @@ function reset () {
 }
 
 
-//add event listener to dropSubmitBtn
-dropSubmitEl.addEventListener("click", function (event) {
+//add event listener to dropSubmitBtn IN WORKS
+/*dropSubmitEl.addEventListener("click", function (event) {
   //prevent default
   event.preventDefault();
   //check if checked boxes are checked
@@ -153,7 +153,7 @@ dropSubmitEl.addEventListener("click", function (event) {
   function ageRatingCheck () {
     if (forKidsEl.checked) {
       console.log("for kids checked");
-      ageRating = "for kids";
+      ageRating = "forkids";
     } else if (pgEl.checked) {
       console.log("pg checked");
       ageRating = "pg";
@@ -183,7 +183,7 @@ dropSubmitEl.addEventListener("click", function (event) {
       genre = "rpg";
     } else if (firstPersonEl.checked) {
       console.log("first person checked");
-      genre = "first person";
+      genre = "firstperson";
     } else if (indyEl.checked) {
       console.log("indy checked");
       genre = "indy";
@@ -195,10 +195,10 @@ dropSubmitEl.addEventListener("click", function (event) {
       genre = "sports";
     } else if (topDownEl.checked) {
       console.log("top down checked");
-      genre = "top down";
+      genre = "topdown";
     } else if (sideScrollEl.checked) {
       console.log("side scroll checked");
-      genre = "side scroll";
+      genre = "sidescroll";
     } else if (mmoEl.checked) {
       console.log("mmo checked");
       genre = "mmo";
@@ -220,7 +220,7 @@ callApi2(platform, rating, ageRating, genre);
 })
 
 //call drop down api function
-function callApi2 (keyword1, keyword2, keyword3, keyword4) {
+/*function callApi2 (keyword1, keyword2, keyword3, keyword4) {
     //reset function
     reset();
     console.clear();
@@ -229,7 +229,7 @@ function callApi2 (keyword1, keyword2, keyword3, keyword4) {
     console.log(ageRating);
     console.log(genre);
     const apiKey = '72423c9bbb7e4173a94ff33fa6307579';
-    const url = `https://rawg.io/api/games?search=${keyword4}&search=${keyword2}&search=${keyword3}&search=${keyword1}&token&key=${apiKey}`;
+    const url = `https://rawg.io/api/games?genre=${keyword4}&tags=${keyword2}&tags=${keyword3}&platforms=6&token&key=${apiKey}`;
     console.log(url);
     fetch(url) 
     
@@ -293,4 +293,4 @@ function callApi2 (keyword1, keyword2, keyword3, keyword4) {
 
 
 // variable will be the selected game title
-//curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}';
+//curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}';*/
