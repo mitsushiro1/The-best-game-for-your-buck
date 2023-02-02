@@ -54,6 +54,13 @@ function callApi (keyword) {
       cardElImg.src = gameImage;
       cardEl.appendChild(cardElImg);
 
+      // //could comment this block of code out for now as it might throw error due to undefined variables
+      // let linkEl = document.createElement('a');
+      // //set the class for linkEl here
+      // linkEl.classList = '';
+      // linkEl.setAttribute('href', '../nextpage.html?q=' + searchTerm + '=' + platform);
+      // linkEl.appendChild(carEl);
+      
       //add image to card
       resultsBoxes.appendChild(cardEl);  
     }   
