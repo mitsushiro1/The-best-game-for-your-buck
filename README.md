@@ -34,8 +34,17 @@ Once the webpage is open, the user can enter the term they are searching for. Th
 Repository owned by Mitsushiro Hirano, 
 Project collaborators include Tamas Pinter: https://github.com/TamasPinter and Lee Zhang: https://github.com/Liguang-Lee-Zhang
 
-API credit to https://www.cheapshark.com/api/1.0 and https://www.rawg.io/apidocs
+API credit to 
+Cheapshark- https://www.cheapshark.com/api/1.0 
+and 
+Rawg- https://www.rawg.io/apidocs
 ## License
+
+UI credits to 
+Bootstrap- https://getbootstrap.com/
+Tailwind CSS- https://tailwindcss.com/
+Google Fonts- https://fonts.google.com/
+Flowbite CSS- https://flowbite.com/
 
 MIT License
 
