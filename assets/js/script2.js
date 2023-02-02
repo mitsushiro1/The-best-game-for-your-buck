@@ -199,3 +199,14 @@ function apiStore(i,storeID) {
 
 // // init();
 getDealsUrl();
+//use this to grab info from the past search
+//var pastSrch = document.getElementById("pastResults");
+// var searchbar = document.getElementById("default-search")
+// 
+// function addButton() {
+//   var btn = document.createElement("button");
+//     btn.innerHTML = searchbar.value + "<br>";
+//     btn.classList.add("btn", "btn-primary", "btn-lg");
+//      pastSrch.appendChild(btn);
+    
+

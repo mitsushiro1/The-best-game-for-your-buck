@@ -2,12 +2,11 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+The Best Game For Your Buck aims to provide users with an easy to navigate source for their gaming collections. Users are able to search their favourite games and find the best deals on the market. Using the rawg api, users can search for a game they are interested in and then with the help of cheapshark api they can see the best deals for their selection. 
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Through creating this web application we as a team learned about the integration of several API's functioning together and the troubleshooting methods we needed. We created a well planned project from the beginning and were able to delegate our tastks appropriately and efficiently. 
+
+As a future project we are aiming to deploy a multi layered search bar that will show users a selection of games from multiple search criteria of their choosing.
 
 ## Table of Contents (Optional)
 
@@ -20,25 +19,32 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No need to install, simply open webpage and use the search bar to find a game you are interested in.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Once the webpage is open, the user can enter the term they are searching for. The more accurate the name, the more refined their results will be. Once a game is selected, they are redirected to the second page where information on the game's current on sale price as well as the location of the sale is displayed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+.
+    ![screenshot1](./assets/image/screenshot1.png)
+    
 
 ## Credits
 
 Repository owned by Mitsushiro Hirano, 
 Project collaborators include Tamas Pinter: https://github.com/TamasPinter and Lee Zhang: https://github.com/Liguang-Lee-Zhang
 
-API credit to https://www.cheapshark.com/api/1.0 and https://www.rawg.io/apidocs
+API credit to 
+Cheapshark- https://www.cheapshark.com/api/1.0 
+and 
+Rawg- https://www.rawg.io/apidocs
 ## License
+
+UI credits to 
+Bootstrap- https://getbootstrap.com/
+Tailwind CSS- https://tailwindcss.com/
+Google Fonts- https://fonts.google.com/
+Flowbite CSS- https://flowbite.com/
 
 MIT License
 

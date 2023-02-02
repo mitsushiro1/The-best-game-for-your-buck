@@ -7,7 +7,10 @@ body{
 
 h1{
     display: flex;
-    background-color: rgb(72, 72, 112);
+    background-image: linear-gradient(
+        rgb(72, 72, 112) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+      );
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
