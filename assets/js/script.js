@@ -50,7 +50,7 @@ function callApi (keyword) {
   reset();
   console.log(keyword);
   const apiKey = '72423c9bbb7e4173a94ff33fa6307579';
-  fetch(`https://rawg.io/api/games?search=${keyword}&search_exact=true${keyword}&token&key=${apiKey}`) 
+  fetch(`https://rawg.io/api/games?search=${keyword}&exclude_additions=true&search_exact=true&token&key=${apiKey}`) 
 
   .then(res => res.json())
   //assign data results to object array
@@ -229,7 +229,10 @@ function callApi2 (keyword1, keyword2, keyword3, keyword4) {
     console.log(ageRating);
     console.log(genre);
     const apiKey = '72423c9bbb7e4173a94ff33fa6307579';
-    fetch(`https://rawg.io/api/games?search=${keyword1}&${keyword2}&${keyword3}&${keyword4}&token&key=${apiKey}`) 
+    const url = `https://rawg.io/api/games?search=${keyword4}&search=${keyword2}&search=${keyword3}&search=${keyword1}&token&key=${apiKey}`;
+    console.log(url);
+    fetch(url) 
+    
   //
     .then(res => res.json())
     
