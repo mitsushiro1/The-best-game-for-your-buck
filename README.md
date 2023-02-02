@@ -25,9 +25,9 @@ No need to install, simply open webpage and use the search bar to find a game yo
 
 Once the webpage is open, the user can enter the term they are searching for. The more accurate the name, the more refined their results will be. Once a game is selected, they are redirected to the second page where information on the game's current on sale price as well as the location of the sale is displayed.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+.
+    ![screenshot1](./assets/image/screenshot1.png)
+    
 
 ## Credits
 
