@@ -88,8 +88,8 @@ function callApi (keyword) {
       // let linkEl = document.createElement('a');
       // //set the class for linkEl here
       // linkEl.classList = '';
-      // linkEl.setAttribute('href', '../nextpage.html?q=' + searchTerm + '=' + platform);
-      // linkEl.appendChild(carEl);
+      // linkEl.setAttribute('href', '../nextpage.html?q=' + searchTerm);
+      // linkEl.appendChild(cardEl);
       
       //add image to card
       resultsBoxes.appendChild(cardEl);  

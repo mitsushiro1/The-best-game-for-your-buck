@@ -1,28 +1,30 @@
-let searchBoxEl = document.querySelector()
+let resultContentEl = document.querySelector('#resultContent');
 let title;
-let platform;
 
-// haven't tweaked this function
-function renderHistory(){
+// // haven't tweaked this function
+// function renderHistory(){
   
-  historyList.innerHTML = "";
-  for (let i = 0; i < his.length; i++) {
-    let li = document.createElement("button");
-    li.textContent = his[i];
-    historyList.append(li);
-  }
-}
+//   historyList.innerHTML = "";
+//   for (let i = 0; i < his.length; i++) {
+//     let li = document.createElement("button");
+//     li.textContent = his[i];
+//     historyList.append(li);
+//   }
+// }
 
-// haven't tweaked this function
-function storeHistory() {
-  let input = searchInput.value.trim();
-  let value = [input];
+// // haven't tweaked this function
+// function storeHistory() {
 
-  his.push(value);
-  localStorage.setItem("searchHistory",JSON.stringify(his));
-  renderHistory();
+//   //store the game title, and image 
+//   //if user clicks on the image or title, do an api call for the deals on the game, and display results
+//   let input = searchInput.value.trim();
+//   let value = [input];
 
-}
+//   his.push(value);
+//   localStorage.setItem("searchHistory",JSON.stringify(his));
+//   renderHistory();
+
+// }
 
 function getDealsUrl(title) {
  
@@ -31,17 +33,16 @@ function getDealsUrl(title) {
   console.log(queryString);
   let parameters = queryString.split('=');
   title = parameters[1];
-  platform = parameters[2];
 
 
   if (title) {
     // ShowSearchResultEl.textContent = title;
     //api call url
-    let cheapShark = `https://www.cheapshark.com/api/1.0/deals?exact=${title}&platform=${platform}&sortBy=${Price}&desc=false`;
+    let cheapShark = `https://www.cheapshark.com/api/1.0/deals?title=${title}&exact=1&sortBy=Price&desc=0`;
     apiDeals(cheapShark);
   } else {
     // This will run and return to the homepage if there was nothing in the URL query parameter.
-    document.location.replace('./Develop/index.html');
+    // document.location.replace('../../index.html');
   }
 }
 
@@ -61,7 +62,7 @@ function apiDeals(url) {
         console.log('No results found!');
         resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
       } else {
-        resultContentEl.textContent = '';
+        // resultContentEl.textContent = '';
         printDeals(locRes);
       }
     })
@@ -73,23 +74,28 @@ function apiDeals(url) {
 
 function printDeals(deals) {
 
+  console.log(deals);
+  console.log(typeof deals);
   for (let i = 0; i < deals.length; i++) {
 
-    var resultCard = document.createElement('div');
-    resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+    let resultCard = document.createElement('div');
+    // resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
 
-    var resultBody = document.createElement('div');
-    resultBody.classList.add('card-body');
+    let resultBody = document.createElement('div');
+    // resultBody.classList.add('card-body');
     resultCard.append(resultBody);
 
-    var pEl = document.createElement('p');
-    pEl.textContent = title + "Store Name: " + deals.store + "Price: "deals.price;
+    let pEl = document.createElement('p');
+    pEl.textContent = "Store Name: " + deals[i].gameID + "Price: " + deals[i].salePrice;
 
-    let buttonEl = document.createElement('button');
+    
+    apiStore();
+
+    // let buttonEl = document.createElement('button');
     // redirects the user to the website when the button is clicked 
-    buttonEl.innerHTML = <a href="">Take me to it!</a>;
+    // buttonEl.innerHTML = <a href="">Take me to it!</a>;
 
-    let link = document.createElement
+    // let link = document.createElement
 
     resultBody.append(pEl);
     resultContentEl.append(resultCard);
@@ -97,6 +103,10 @@ function printDeals(deals) {
   }
 }
 
+function apiStore(){
+
+
+}
 
 
 
@@ -105,7 +115,8 @@ function init() {
   renderHistory();
 }
 
-init();
+// init();
+getDealsUrl();
 
 //optional event.listener for the search again button, could just do the following in html
 {/* <div>
