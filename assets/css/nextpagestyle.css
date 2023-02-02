@@ -8,8 +8,11 @@ body{
   }
 
   header{
-    padding: 100px;
-    background-color: rgb(72, 72, 112);
+    padding: 50px;
+    background-image: linear-gradient(
+        rgb(72, 72, 112) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+      );
     text-align: center;
     color: #fff;
     display: flex;
@@ -41,10 +44,7 @@ body{
  
 } 
 
-nav{
-    display: flex;
-    background-color: rgb(72, 72, 112);
-}
+
 
 main {
     display: flex;
@@ -52,19 +52,14 @@ main {
 h2{
     text-align: center;
 }
-aside {
-    flex: 30%;
-    background-color: #b9c6ae;
-    padding: 20px;
-    flex-wrap: wrap;
-  }
 .saleResultsPage{
     display: flex;
     flex-direction: column;
     flex: 70%;
     text-align: center;
     padding: 20px;
-    background-color: #4e5a9c;
+    background-color: #8D9EFF;
+
     width:70%;
     height: 1000px;
 
@@ -82,7 +77,8 @@ aside {
     height:auto;
     width: 30%;
     height: 1000px;
-    border-right: solid #8D9EFF 10px;
+    border-right:solid  #32a1ce 5px;
+
 }
 
 li{
