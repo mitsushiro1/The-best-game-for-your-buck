@@ -1,0 +1,90 @@
+body{
+    font-family: 'Noto Sans Adlam Unjoined', sans-serif;
+    background-color: #8D9EFF;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  header{
+    padding 100px;
+    background-color: rgb(72, 72, 112);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ 
+    
+}  
+ h1{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: azure;
+
+}  
+
+#searchAgain {
+   
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   
+} 
+.containerSecond{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+ 
+} 
+
+nav{
+    display: flex;
+    background-color: rgb(72, 72, 112);
+}
+
+main {
+    display: flex;
+  }
+h2{
+    text-align: center;
+}
+aside {
+    flex: 30%;
+    background-color: #b9c6ae;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+.saleResultsPage{
+    display: flex;
+    flex-direction: column;
+    flex: 70%;
+    text-align: center;
+    padding: 20px;
+    background-color: #4e5a9c;
+    width:70%;
+    height: 1000px;
+
+    
+
+}
+
+.pastResults{
+    display: flex;
+    flex-direction: column;
+    flex: 30%;
+    text-align: center;
+    padding: 20px;
+    background-color: #B9E0FF;
+    height:auto;
+    width: 30%;
+    height: 1000px;
+    border-right: solid #8D9EFF 10px;
+}
+
+li{
+    list-style: none;
+}
