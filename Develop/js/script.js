@@ -1,6 +1,36 @@
 //search bar elements
 const searchBoxEl = document.querySelector("#default-search");
 const searchButtonEl = document.querySelector("#searchBtn");
+//checkbox elements
+const xboxEl = document.querySelector("#checkbox-item-1");
+const playstationEl = document.querySelector("#checkbox-item-2");
+const pcEl = document.querySelector("#checkbox-item-3");
+const nintendoEl = document.querySelector("#checkbox-item-4");
+const fiveStarEl = document.querySelector("#Rating-1");
+const fourStarEl = document.querySelector("#Rating-2");
+const threeStarEl = document.querySelector("#Rating-3");
+const twoStarEl = document.querySelector("#Rating-4");
+const oneStarEl = document.querySelector("#Rating-5");
+const forKidsEl = document.querySelector("#AgeRating-1");
+const pgEl = document.querySelector("#AgeRating-2");
+const pg13El = document.querySelector("#AgeRating-3");
+const teenEl = document.querySelector("#AgeRating-4");
+const matureEl = document.querySelector("#AgeRating-5");
+const adultEl = document.querySelector("#AgeRating-6");
+const actionEl = document.querySelector("#Genre-1");
+const rpgEl = document.querySelector("#Genre-2");
+const firstPersonEl = document.querySelector("#Genre-3");
+const indyEl = document.querySelector("#Genre-4");
+const simulationEl = document.querySelector("#Genre-5");
+const hackEl = document.querySelector("#Genre-6");
+const topDownEl = document.querySelector("#Genre-7");
+const sideScrollEl = document.querySelector("#Genre-8");
+const mmoEl = document.querySelector("#Genre-9");
+const mobaEl = document.querySelector("#Genre-10");
+const multiEl = document.querySelector("#Genre-11");
+const singleEl = document.querySelector("#Genre-12");
+const dropSubmitEl = document.querySelector("#dropBtn");
+
 
 let searchTerm = '';
 
@@ -74,6 +104,130 @@ function reset () {
   resultsBoxes.innerHTML = '';
 }
 
+//add event listener to dropSubmitBtn
+dropSubmitEl.addEventListener("click", function (event) {
+  //prevent default
+  event.preventDefault();
+  //check if checked boxes are checked
+  platformCheck();
+  ratingCheck();
+  ageCheck();
+  genreCheck();
+  //call api function
+  
+
+
+})
+  //function to assign platform variable to checked box value
+function platformCheck (platform) {
+    if (xboxEl.checked) {
+      console.log("xbox checked");
+      platform = "xbox";
+    } else if (playstationEl.checked) {
+      console.log("playstation checked");
+      platform = "playstation";
+    } else if (pcEl.checked) {
+      console.log("pc checked");
+      platform = "pc";
+    } else if (nintendoEl.checked) {
+      console.log("nintendo checked");
+      platform = "nintendo";
+    } else {
+      console.log("no platform selected");
+      platform = "";
+  }}
+
+  //function to assign rating variable to checked box value
+function ratingCheck (rating) {
+  if (fiveStarEl.checked) {
+    console.log("5 star checked");
+    rating = "5";
+  } else if (fourStarEl.checked) {
+    console.log("4 star checked");
+    rating = "4";
+  } else if (threeStarEl.checked) {
+    console.log("3 star checked");
+    rating = "3";
+  } else if (twoStarEl.checked) {
+    console.log("2 star checked");
+    rating = "2";
+  } else if (oneStarEl.checked) {
+    console.log("1 star checked");
+    rating = "1";
+  } else {
+    console.log("no rating selected");
+    rating = "";
+  }}
+
+  //function to assign age rating variable to checked box value
+function ageRatingCheck (ageRating) {
+  if (forKidsEl.checked) {
+    console.log("for kids checked");
+    ageRating = "for kids";
+  } else if (pgEl.checked) {
+    console.log("pg checked");
+    ageRating = "pg";
+  } else if (pg13El.checked) {
+    console.log("pg13 checked");
+    ageRating = "pg13";
+  } else if (teenEl.checked) {
+    console.log("teen checked");
+    ageRating = "teen";
+  } else if (matureEl.checked) {
+    console.log("mature checked");
+    ageRating = "mature";
+  } else if (adultEl.checked) {
+    console.log("adult checked");
+    ageRating = "adult";
+  } else {
+    console.log("no age rating selected");
+    ageRating = "";
+  }}
+
+  //function to assign genre variable to checked box value
+function genreCheck (genre) {
+  if (actionEl.checked) {
+    console.log("action checked");
+    genre = "action";
+  } else if (rpgEl.checked) {
+    console.log("rpg checked");
+    genre = "rpg";
+  } else if (firstPersonEl.checked) {
+    console.log("first person checked");
+    genre = "first person";
+  } else if (indyEl.checked) {
+    console.log("indy checked");
+    genre = "indy";
+  } else if (simulationEl.checked) {
+    console.log("simulation checked");
+    genre = "simulation";
+  } else if (hackEl.checked) {
+    console.log("hack checked");
+    genre = "hack";
+  } else if (topDownEl.checked) {
+    console.log("top down checked");
+    genre = "top down";
+  } else if (sideScrollEl.checked) {
+    console.log("side scroll checked");
+    genre = "side scroll";
+  } else if (mmoEl.checked) {
+    console.log("mmo checked");
+    genre = "mmo";
+  } else if (mobaEl.checked) {
+    console.log("moba checked");
+    genre = "moba";
+  } else if (multiEl.checked) {
+    console.log("multi checked");
+    genre = "multi";
+  } else if (singleEl.checked) {
+    console.log("single checked");
+    genre = "single";
+  } else {
+    console.log("no age rating selected");
+    ageRating = "";
+  }}
+
+
 
 // variable will be the selected game title
-//curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}'*/
+//curl --location --request GET 'https://www.cheapshark.com/api/1.0/games?title={variable}';
