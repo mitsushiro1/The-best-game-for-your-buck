@@ -8,29 +8,21 @@ let response;
 let imgUrl;
 let pastSearches = [];
 
-//use this to grab info from the past search
-//var pastSrch = document.getElementById("pastResults");
-// var searchbar = document.getElementById("default-search")
-// 
-// function addButton() {
-//   var btn = document.createElement("button");
-//     btn.innerHTML = searchbar.value + "<br>";
-//     btn.classList.add("btn", "btn-primary", "btn-lg");
-//      pastSrch.appendChild(btn);
-
-
-// haven't tweaked this function
 function renderHistory() {
   // pastSrch.innerHTML = "";
 
   let ul = document.createElement("ul");
+  ul.classList.add('m-3');
   pastSrch.append(ul);
   console.log(pastSearches);
   for (let i = 0; i < pastSearches.length; i++) {
 
     let itemName = document.createElement("li");
     itemName.textContent = pastSearches[i].gameTitle;
+    itemName.classList.add('m-3','ms-2');
     let itemImg = document.createElement("img");
+    itemImg.classList.add('img-thumbnail');
+    itemImg.setAttribute('style','width:16rem');
     itemImg.setAttribute("src", pastSearches[i].img);
 
     itemName.append(itemImg);
@@ -39,7 +31,6 @@ function renderHistory() {
   }
 }
 
-// haven't tweaked this function
 function storeHistory() {
   if (title)
 
@@ -69,10 +60,7 @@ function getDealsUrl(title) {
     //api call url
     let cheapShark = `https://www.cheapshark.com/api/1.0/deals?title=${title}&exact=1&sortBy=Price&desc=0`;
     apiDeals(cheapShark);
-  } else {
-    // This will run and return to the homepage if there was nothing in the URL query parameter.
-    // document.location.replace('../../index.html');
-  }
+  } 
 }
 
 function apiDeals(url) {
@@ -86,12 +74,10 @@ function apiDeals(url) {
     })
 
     .then(function (locRes) {
-      // may need to change the resultContentEl to something else 
       if (!Object.keys(locRes).length) {
         console.log('No results found!');
-        resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+        resultContentEl.innerHTML = '<h3 class="m-4">No results found, search again!</h3>';
       } else {
-        // resultContentEl.textContent = '';
         response = locRes;
         console.log(locRes);
         for (let i = 0; i < response.length; i++) {
@@ -101,11 +87,7 @@ function apiDeals(url) {
         storeHistory();
       }
     })
-    // .then(function(){
-    //   console.log(response);
-    //     // printDeals(response);
 
-    // })
     .catch(function (error) {
       console.error(error);
     });
@@ -126,20 +108,16 @@ function apiStore(i, storeID) {
     .then(function (locRes) {
 
       if (!Object.keys(locRes).length) {
-        // console.log('No results found!');
-        // resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+        console.log('No results found!');
+        resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
       } else {
         console.log(locRes);
-        // // resultContentEl.textContent = '';
-
         let storeIndex = storeID - 1;
         console.log(storeIndex);
         Name = locRes[storeIndex].storeName;
         console.log(Name);
         storeName.push(Name);
         console.log(storeName);
-
-
         logoUrl = "https://www.cheapshark.com" + locRes[storeIndex].images.logo;
       }
     })
@@ -147,23 +125,18 @@ function apiStore(i, storeID) {
       console.log(title);
       console.log(TitleEl);
 
-      camelize = function camelize(str) {
-        return str.replace(/\W+(.)/g, function (match, chr) {
-          return chr.toUpperCase();
-        });
-      }
-
-      TitleEl.textContent = camelize(title);
+      TitleEl.textContent = title.toLowerCase();
 
       console.log(response);
       console.log(typeof response);
 
 
       let resultCard = document.createElement('div');
-      // resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+      resultCard.classList.add('card','bg-transparent', 'border-0','text-dark', 'mb-3', 'p-3');
+      resultCard.setAttribute("style","width: 14rem");
       
       let resultBody = document.createElement('div');
-      // resultBody.classList.add('card-body');
+      resultBody.classList.add('card-body');
       resultCard.append(resultBody);
 
 
@@ -174,10 +147,12 @@ function apiStore(i, storeID) {
       console.log(response);
 
       let pEl = document.createElement('p');
+      pEl.classList.add("list-group-item");
       pEl.textContent = "Store Name: " + storeName[i] + " Price: " + response[i].salePrice;
       resultBody.append(pEl);
 
       let link = document.createElement('a');
+      link.classList.add("btn","btn-primary");
 
       imgUrl = "https://www.cheapshark.com/redirect?dealID=" + response[i].dealID;
       console.log(imgUrl);
@@ -196,12 +171,6 @@ function apiStore(i, storeID) {
 
 
 }
-
-
-
-
-
-
 
 
 function init() {

@@ -87,7 +87,7 @@ function callApi (keyword) {
       //could comment this block of code out for now as it might throw error due to undefined variables
       let linkEl = document.createElement('a');
       //set the class for linkEl here
-      linkEl.classList = '';
+      linkEl.classList.add('btn','btn-light');
       linkEl.textContent = "Take me to deals!";
       linkEl.setAttribute('href', 'nextpage.html?q=' + gameName);
       console.log(linkEl.innerHTML);
