@@ -84,12 +84,15 @@ function callApi (keyword) {
       cardElImg.src = gameImage;
       cardEl.appendChild(cardElImg);
 
-      // //could comment this block of code out for now as it might throw error due to undefined variables
-      // let linkEl = document.createElement('a');
-      // //set the class for linkEl here
-      // linkEl.classList = '';
-      // linkEl.setAttribute('href', '../nextpage.html?q=' + searchTerm);
-      // linkEl.appendChild(cardEl);
+      //could comment this block of code out for now as it might throw error due to undefined variables
+      let linkEl = document.createElement('a');
+      //set the class for linkEl here
+      linkEl.classList = '';
+      linkEl.textContent = "Take me to deals!";
+      linkEl.setAttribute('href', 'nextpage.html?q=' + gameName);
+      console.log(linkEl.innerHTML);
+      cardEl.append(linkEl);
+      
       
       //add image to card
       resultsBoxes.appendChild(cardEl);  
