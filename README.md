@@ -8,9 +8,7 @@ Through creating this web application we as a team learned about the integration
 
 As a future project we are aiming to deploy a multi layered search bar that will show users a selection of games from multiple search criteria of their choosing.
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
