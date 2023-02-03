@@ -25,6 +25,7 @@ Once the webpage is open, the user can enter the term they are searching for. Th
 
 .
     ![screenshot1](./assets/image/screenshot1.png)
+    ![screenshot2](./assets/image/screenshot2.png)
     
 
 ## Credits
